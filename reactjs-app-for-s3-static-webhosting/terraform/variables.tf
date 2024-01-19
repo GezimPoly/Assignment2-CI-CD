@@ -17,12 +17,12 @@ variable "app_bucket_name" {
 }
 
 variable "projectname" {
-  default     = "gezim-ci-cd"
+  default     = "Assignment2-CI-CD"
   description = "pipeline project name"
 }
 
 variable "repo_id" {
-  default     = "https://github.com/GezimPoly/Assignment2-CI-CD"
+  default     = "GezimPoly/Assignment2-CI-CD"
   description = "github repository id"
 }
 

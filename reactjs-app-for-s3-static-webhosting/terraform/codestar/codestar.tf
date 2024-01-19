@@ -12,7 +12,7 @@ provider "aws" {
   secret_key = var.secret_key
 }
 
-resource "aws_codestarconnections_connection" "easydeploy_github" {
+resource "aws_codestarconnections_connection" "Assignment2-CI-CD_github" {
   name          = "pipeline automation"
   provider_type = "GitHub"
 }

@@ -14,11 +14,19 @@ resource "aws_s3_bucket" "app_bucket" {
   force_destroy = true
 
 }
+resource "aws_s3_bucket_public_access_block" "app_bucket" {
+  bucket = aws_s3_bucket.app_bucket.id
+
+  block_public_policy     = false // This is default, so you can probably remove this line
+  restrict_public_buckets = false // same as above
+  block_public_acls       = true 
+  ignore_public_acls      = true 
+}
 
 resource "aws_s3_bucket_policy" "app_bucket_policy" {
   bucket = aws_s3_bucket.app_bucket.id
 
-  policy = <<EOF
+  policy =<<POLICY
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -31,6 +39,6 @@ resource "aws_s3_bucket_policy" "app_bucket_policy" {
         }
     ]
 }
-EOF
+POLICY
 }
 
