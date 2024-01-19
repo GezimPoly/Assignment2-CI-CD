@@ -35,5 +35,4 @@ variable "connection_arn" {
   type        = string
   description = "Arn for the CodeStar Connection"
   default = "arn:aws:codestar-connections:us-east-1:888659321129:connection/2f115604-15f2-48a5-bf9c-d377b60e96c4"
-
 }
